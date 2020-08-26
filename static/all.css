@@ -2,19 +2,100 @@
 	--blue:rgba(23, 104, 172, 0.9);
 	--black:#0D0221;
 	--white:#FFFFFA;
+	--red: #cf1020;
 	--gray: rgb(245,245,245);
 	--dark: rgb(110,110,110);
 	letter-spacing: 0.07em;
 }
 html {
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 body {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.2em;
 	overflow-x: hidden;
 	background-color: var(--gray);
 	color: black;
 	width: 100vw;
 	min-height: 100vh;
 	height: 100%;
+}
+a {
+	text-decoration: none !important;
+}
+.col-xs-12 {
+	padding-left: 0;
+	padding-right: 0;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.loader {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	padding-top: 45vh;
+	background-color: rgba(255,255,255,1);
+	z-index: 999999;
+}
+.loader img {
+	display: block;
+	margin: auto;
+	width: 25vh;
+}
+
+
+.navbar {
+	position: fixed;
+	top: 0;
+	z-index: 999999;
+}
+.navbar-desktop {
+	height: 5em;
+	transition: .5s;
+	border: none;
+	border-radius: 0;
+}
+.navbar-desktop:hover {
+	background-color: rgba(0,0,0,1) !important;
+}
+.navbar-desktop .logo img {
+	height: 5em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.navbar-desktop .links {
+	height: inherit;
+}
+.navbar-desktop .links a {
+	display: inline-block;
+	font-weight: 400;
+	font-size: 1.1em;
+	text-decoration: none;
+	color: var(--white);
+	padding-top: 1.55em;
+	padding-bottom: 1.5em;
+	padding-left: .5em;
+	padding-right: .5em;
+	margin-left: 1em;
+	transition: .25s;
+}
+.navbar-desktop .links a:hover {
+	background-color: var(--white);
+	color: var(--red);
+	font-weight: 800;
+}
+
+.navbar-desktop .cart .glyphicon {
+	color: var(--white);
 }

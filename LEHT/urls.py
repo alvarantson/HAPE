@@ -24,11 +24,21 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('index.urls')),
+    path('checkout/', include('checkout.urls')),
+    path('artists/', include('artists.urls')),
+    path('releases/', include('releases.urls')),
+    path('shop/', include('shop.urls')),
     path('favicon.ico',
         RedirectView.as_view(
-            url=staticfiles_storage.url('favicon.ico'),
+            url=staticfiles_storage.url('favicon.png'),
         ),
         name="favicon"
+    ),
+    path('sitemap.xml',
+        RedirectView.as_view(
+            url=staticfiles_storage.url('sitemap.xml'),
+        ),
+        name="sitemap"
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

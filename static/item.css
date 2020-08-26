@@ -1,0 +1,9 @@
+.merch-item {
+	color: var(--white);
+}
+.merch-item-img {
+	width: 100%;
+	height: 20em;
+	background-size: cover;
+	z-index: 1001;
+} 

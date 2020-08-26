@@ -1,0 +1,21 @@
+{% load static %}
+{% include "navbar/navbar.html" %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shop.css' %}">
+<div class="intro col-xs-12">
+	<div class="shop-bg col-xs-12" style="background-image: url({% static 'shop_bg.jpg' %});"></div>
+	<div class="col-xs-12"><h1>TOETA MEIE ARTISTE</h1></div>
+</div>
+
+
+<div class="merch col-xs-12" style="background-image: url({% static 'texture2.jpg' %});">
+	<div class="col-xs-3"></div>
+	<div class="items col-xs-6">
+		<link rel="stylesheet" type="text/css" href="{% static 'item.css' %}">
+		{% for item in merch %}
+			{% include 'content/item.html' %}
+		{% endfor %}
+	</div>
+	<div class="col-xs-3"></div>
+</div>
+{% include "navbar/footer.html" %}

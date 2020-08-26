@@ -32,7 +32,11 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'index',
+    'checkout',
     'navbar',
+    'artists',
+    'releases',
+    'shop',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,6 +129,3 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/i/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'i')
-
-STRIPE_PUBLISHABLE_KEY = 'pk_test_x1LeFRx5oYCrJHHgPSOD564r005lRulbrX'
-STRIPE_SECRET_KEY = 'sk_test_KhJlTmrefWAmKuU1G7GsI92d00unZVwPlE'

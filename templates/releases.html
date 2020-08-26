@@ -1,0 +1,34 @@
+{% load static %}
+{% include "navbar/navbar.html" %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'releases.css' %}">
+
+<div class="releases col-xs-12" style="background-image: url({% static 'texture1.jpg' %});">
+	<div class="over col-xs-12">
+		<div class="col-xs-3"></div>
+		<div class="col-xs-6">
+			<br><br><br><br><br><br>
+			<link rel="stylesheet" type="text/css" href="{% static 'release.css' %}">
+			{% for release in releases %}
+				{% include 'content/release.html' %}
+			{% endfor %}
+		</div>
+		<div class="side-nav col-xs-3">
+			{% for release in releases %}
+				<p onclick="$('#{{ release.random_str }}').focus();" id="{{ release.random_str }}-sidenav" class="noselect">
+					<span class="date" id="{{ release.random_str }}-sidenav-date">{{ release.date }}</span> 
+					{{ release.name }}
+					<b>{{ release.artists }}</b>
+				</p>
+				<script type="text/javascript">
+					$("#{{ release.random_str }}-sidenav").hover(function() {
+						$("#{{ release.random_str }}-sidenav-date").css({"opacity":".75"});
+					}, function() {
+						$("#{{ release.random_str }}-sidenav-date").css({"opacity":".2"});
+					});
+				</script>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% include "navbar/footer.html" %}

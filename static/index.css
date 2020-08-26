@@ -1,0 +1,72 @@
+.intro {
+	height: 100vh;
+}
+.intro .bg-img {
+	min-width: 100vw;
+	min-height: 100vh;
+	position: fixed;
+	z-index: 0;
+}
+.intro .clickable {
+	position: fixed;
+	margin-top: 15vh;
+	z-index: 10;
+	font-family: beon;
+	color: var(--red);
+	font-weight: 1000;
+	text-align: center;
+	width: 100vw;
+	opacity: 0;
+	transition: .35s;
+}
+
+.intro .artists .artist{
+	margin-top: 20vh;
+	height: 80vh;
+	position: fixed;
+}
+.intro .artists .artist img {
+	display: block;
+	height: 100%;
+	filter: saturate(25%);
+	transition: .35s;
+}
+.intro .artists .artist img:hover {
+	filter: saturate(100%);
+	z-index: 999 !important;
+	transform: scale(1.05);
+
+}
+.intro .artist-name {
+	font-family: beon;
+	color: var(--red);
+	font-weight: 1000;
+	text-align: center;
+}
+
+.releases {
+	background-color: white;
+	z-index: 1000;
+}
+.releases .over {
+	background-color: rgba(255,255,255,.75);
+}
+.releases h2 {
+	text-align: center;
+	margin: 4em 2em 3em 2em;
+	font-size: 1.75em;
+}
+
+
+
+
+
+.merch h2 {
+	text-align: center;
+	margin: 4em 2em 3em 2em;
+	font-size: 1.75em;
+	color: var(--white);
+}
+.merch {
+	z-index: 1000;
+}

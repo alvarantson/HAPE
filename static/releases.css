@@ -1,0 +1,31 @@
+
+.releases {
+	background-color: white;
+	z-index: 1000;
+	min-height: 100vh;
+}
+.releases .over {
+	background-color: rgba(255,255,255,0);
+}
+.releases h2 {
+	text-align: center;
+	margin: 4em 2em 3em 2em;
+	font-size: 1.75em;
+}
+
+
+
+.side-nav {
+	margin-top: 10em;
+	text-align: right;
+	position: fixed;
+	right: 0;
+}
+.side-nav .date {
+	opacity: .2;
+	transition: .3s;
+}
+.side-nav p {
+	color: var(--black);
+	margin-bottom: .1em;
+}

@@ -1,0 +1,30 @@
+{% load static %}
+<div class="release col-xs-12" id="{{ release.random_str }}">
+	<div class="info col-xs-8">
+		<h3>{{ release.name }}</h3>
+		<h4>{{ release.artists }} <span class="date">{{ release.date }}</span></h4>
+	</div>
+	<div class="links col-xs-4">
+		{% if release.yt_url %}
+		<a href="{{ release.yt_url }}" target="_blank">
+			<img class="site-icon" src="{% static 'yt.png' %}">
+		</a>
+		{% endif %}
+		{% if release.sc_url %}
+		<a href="{{ release.sc_url }}" target="_blank">
+			<img class="site-icon" src="{% static 'sc.png' %}">
+		</a>
+		{% endif %}
+		{% if release.sp_url %}
+		<a href="{{ release.sp_url }}" target="_blank">
+			<img class="site-icon" src="{% static 'sp.png' %}">
+		</a>
+		{% endif %}
+		{% if release.it_url %}
+		<a href="{{ release.it_url }}" target="_blank">
+			<img class="site-icon" src="{% static 'it.png' %}">
+		</a>
+		{% endif %}
+	</div>
+	<iframe width="100%" height="460" src="{{ release.yt_embed }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>

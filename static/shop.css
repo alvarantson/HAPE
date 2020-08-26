@@ -1,0 +1,70 @@
+.intro {
+	height: 75vh;
+}
+.shop-bg {
+	height: 75vh;
+	background-size: cover;
+	position: fixed;
+	z-index: 0;
+}
+.intro h1 {
+	margin-top: 32.5vh;
+	color: var(--white);
+	text-align: center;
+	z-index: 10;
+}
+
+
+.merch {
+	padding-top: 10vh;
+}
+
+
+
+
+
+
+
+.product {
+	color: var(--white);
+	padding-top: 15vh;
+	min-height: 100vh;
+	text-shadow: 1px 1px rgba(0,0,0,1);
+}
+.product h1 {
+	font-weight: 1000;
+	font-size: 4em;
+}
+.product h2 {
+	font-weight: 1000;
+}
+.product .main-img {
+	height: 50vh;
+}
+.product .alt-img {
+	height: 24vh;
+	margin-top: 1vh;
+}
+.product .right {
+	text-align: right;
+}
+.product span.button {
+	background-color: var(--red);
+	font-size: 2em;
+	font-weight: 1000;
+	padding: .5em .5em .5em .5em;
+}
+.product span.button a {
+	padding: .5em .5em .5em .5em;
+	color: var(--white);
+}
+
+.og_price, .earnings {
+	display: inline-block;
+}
+.og_price {
+	border-bottom: solid 2px var(--red);
+}
+.earnings {
+	border-bottom: solid 2px var(--blue);
+}

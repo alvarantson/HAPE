@@ -2,7 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Title of the document</title>
+<title>H A P E</title><!-- - {{ request.path|cut:"/" }} -->
+
+<!-- FACEBOOK -->
+<meta property="og:title" content="HAPE brand">
+<meta property="og:image" content="{% static 'fb_preview.jpg' %}">
+
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -14,22 +19,34 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'all.css' %}">
 
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;450;500;600;700&display=swap" rel="stylesheet">
+
+<style type="text/css">
+	@font-face { font-family: beon; src: url('{% static 'beon.ttf' %}'); } 
+</style>
+
 
 </head>
 
 <body>
 
 <div class="loader">
-	<h4>Loading..</h4>
+	<h4><img src="{% static 'logo.png' %}"></h4>
 </div>
 
-
-
-<nav class="navbar-desktop">
-	
-</nav>
-<div class="col-xs-12 desktop-spacer">.</div>
-
-
-
+<div class="navbar navbar-desktop col-xs-12">
+	<div class="logo col-xs-2">
+		<a href="/"><img src="{% static 'logo.png' %}"></a>
+	</div>
+	<div class="links col-xs-8">
+		<p>
+			<a href="/">KOJU</a>
+			<a href="/artists">ARTISTID</a>
+			<a href="/releases">VÄLJAS</a>
+			<a href="/shop">POOD</a>
+		</p>
+	</div>
+	<div class="cart col-xs-2">
+		<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+{% load static %}
+<a href="/shop/{{ item.random_str }}">
+	<div class="merch-item col-xs-4">
+		<div class="merch-item-img" id="{{ item.random_str }}-img" style="background-image: url({{ item.img.url }});"></div>
+
+		<script type="text/javascript">
+			$("#{{ item.random_str }}-img").hover(function() {
+				$(this).css({"background-image":"url({{ item.img_2.url }}"});
+			}, function() {
+				$(this).css({"background-image":"url({{ item.img.url }}"});
+			});
+		</script>
+
+		<h4>{{ item.name }}</h4>
+		<h3>{{ item.price }}€</h3>
+	</div>
+</a>

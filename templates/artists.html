@@ -1,0 +1,15 @@
+{% load static %}
+{% include "navbar/navbar.html" %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'artists.css' %}">
+
+<div class="artists col-xs-12">
+	{% for artist in artists %}
+		<div class="artist col-xs-12">
+			<h2>{{ artist.name }}</h2>
+			<h3>{{ artist.real_name }}</h3>
+		</div>
+	{% endfor %}
+</div>
+
+{% include "navbar/footer.html" %}

@@ -4,16 +4,11 @@ function loader() {
 function pop_up(pop_up_name){
 	$("#"+pop_up_name).toggleClass("hidden");
 };
-$('a').on("click", function(){
-	if (this.attr('href') != "" ) {
-		loader();
-	}
-})
 
 
 
 $( document ).ready(function() {
-    $(".loader").fadeOut(600);
+	$(".loader").fadeOut(600);
 });
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 	$(".navbar-desktop").toggleClass("hidden");
@@ -40,3 +35,18 @@ $('#shopping_cart_phone').on("click", function(){
 });
 
 
+
+var a = $(".navbar").offset().top;
+
+function scrollListener(){
+	if($(document).scrollTop() > a)
+	{   
+		$('.navbar').css({"background-color":"rgba(0,0,0,.5)"});
+	} else {
+		$('.navbar').css({"background-color":"rgba(0,0,0,0)"});
+	}
+};
+
+$(document).scroll(scrollListener);
+
+scrollListener();

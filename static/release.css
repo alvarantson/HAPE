@@ -1,0 +1,11 @@
+.release .site-icon {
+	margin-top: 1em;
+	height: 4em;
+	display: inline-block;
+}
+.release {
+	margin: 1em 0 7em 0; 
+}
+.release .date {
+	opacity: .5;
+}
