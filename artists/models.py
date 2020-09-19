@@ -20,5 +20,8 @@ class Artist(models.Model):
 	artist_page_img = models.ImageField(null=True)
 	artist_page_bg = models.ImageField(null=True)
 
+	artist_page_font_color = models.CharField(max_length=999, blank=True)
+	artist_page_shadow = models.CharField(max_length=999, blank=True)
+
 	def __str__(self):
 		return self.name

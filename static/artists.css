@@ -1,3 +1,34 @@
+.artists {
+}
 .artist {
-	
+	padding-top: 20vh;
+	max-height: 100vh;
+	overflow-y: hidden;
+	background-size: cover;
+}
+.artist-right {
+	text-align: right;
+}
+.artist .artist-img {
+	height: 60vh;
+	margin-left: auto;
+	margin-right: 0;
+	display: block;
+}
+.artist-right .artist-img {
+	margin-left: 0;
+	margin-right: auto;
+}
+.artist h2 {
+	font-weight: 1000;
+	font-size: 7em;
+	margin-bottom: 0;
+}
+.artist h3 {
+	font-family: beon;
+	font-size: 2.5em;
+	margin-top: 0;
+}
+.artist .site-icon {
+	height: 4em;
 }

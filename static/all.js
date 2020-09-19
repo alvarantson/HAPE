@@ -39,7 +39,7 @@ $('#shopping_cart_phone').on("click", function(){
 var a = $(".navbar").offset().top;
 
 function scrollListener(){
-	if($(document).scrollTop() > a)
+	if($(document).scrollTop() > a && !window.location.pathname.includes("artists"))
 	{   
 		$('.navbar').css({"background-color":"rgba(0,0,0,.5)"});
 	} else {

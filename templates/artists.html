@@ -4,12 +4,137 @@
 <link rel="stylesheet" type="text/css" href="{% static 'artists.css' %}">
 
 <div class="artists col-xs-12">
-	{% for artist in artists %}
-		<div class="artist col-xs-12">
-			<h2>{{ artist.name }}</h2>
-			<h3>{{ artist.real_name }}</h3>
-		</div>
+	{% for pair in artists %}
+		{% with pair.0 as artist %}
+		<section>
+			<style type="text/css">
+				#{{ artist.name|cut:' ' }} {
+					color: {{ artist.artist_page_font_color }} !important;
+					text-shadow: {{ artist.artist_page_shadow }};
+				}
+			</style>
+
+			<div class="artist col-xs-12" style="background-image: url('{{ artist.artist_page_bg.url }}');" id="{{ artist.name|cut:' ' }}">
+				<div class="col-xs-4">
+					<img class="artist-img" src="{{ artist.artist_page_img.url }}">
+				</div>
+				<div class="col-xs-6">
+					<h2>{{ artist.name }}</h2>
+					<h3>{{ artist.real_name }}</h3>
+					<h4>{{ artist.email }}</h4>
+					<br>
+					<p>{{ artist.description|linebreaks }}</p>
+
+					<h5>
+						<br>
+						{% if artist.yt_url %}
+						<a href="{{ artist.yt_url }}" target="_blank">
+							<img class="site-icon" src="{% static 'yt.png' %}">
+						</a>
+						{% endif %}
+						{% if artist.sc_url %}
+						<a href="{{ artist.sc_url }}" target="_blank">
+							<img class="site-icon" src="{% static 'sc.png' %}">
+						</a>
+						{% endif %}
+						{% if artist.sp_url %}
+						<a href="{{ artist.sp_url }}" target="_blank">
+							<img class="site-icon" src="{% static 'sp.png' %}">
+						</a>
+						{% endif %}
+						{% if artist.it_url %}
+						<a href="{{ artist.it_url }}" target="_blank">
+							<img class="site-icon" src="{% static 'it.png' %}">
+						</a>
+						{% endif %}
+						{% if artist.ig_url %}
+						<a href="{{ artist.ig_url }}" target="_blank">
+							<img class="site-icon" src="{% static 'ig.png' %}">
+						</a>
+						{% endif %}
+						{% if artist.fb_url %}
+						<a href="{{ artist.fb_url }}" target="_blank">
+							<img class="site-icon" src="{% static 'fb.png' %}">
+						</a>
+						{% endif %}
+					</h5>
+				</div>
+				<div class="col-xs-2"></div>
+				<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>.</p>
+			</div>
+		</section>
+		{% endwith %}
+		{% if pair.1 %}
+			{% with pair.1 as artist %}
+			<section>
+				<style type="text/css">
+					#{{ artist.name|cut:' ' }} {
+						color: {{ artist.artist_page_font_color }} !important;
+						text-shadow: {{ artist.artist_page_shadow }};
+					}
+				</style>
+				<div class="artist artist-right col-xs-12" style="background-image: url('{{ artist.artist_page_bg.url }}');" id="{{ artist.name|cut:' ' }}">
+					<div class="col-xs-2"></div>
+					<div class="col-xs-6">
+						<h2>{{ artist.name }}</h2>
+						<h3>{{ artist.real_name }}</h3>
+						<h4>{{ artist.email }}</h4>
+						<br>
+						<p>{{ artist.description|linebreaks }}</p>
+
+						<h5>
+							<br>
+							{% if artist.yt_url %}
+							<a href="{{ artist.yt_url }}" target="_blank">
+								<img class="site-icon" src="{% static 'yt.png' %}">
+							</a>
+							{% endif %}
+							{% if artist.sc_url %}
+							<a href="{{ artist.sc_url }}" target="_blank">
+								<img class="site-icon" src="{% static 'sc.png' %}">
+							</a>
+							{% endif %}
+							{% if artist.sp_url %}
+							<a href="{{ artist.sp_url }}" target="_blank">
+								<img class="site-icon" src="{% static 'sp.png' %}">
+							</a>
+							{% endif %}
+							{% if artist.it_url %}
+							<a href="{{ artist.it_url }}" target="_blank">
+								<img class="site-icon" src="{% static 'it.png' %}">
+							</a>
+							{% endif %}
+							{% if artist.ig_url %}
+							<a href="{{ artist.ig_url }}" target="_blank">
+								<img class="site-icon" src="{% static 'ig.png' %}">
+							</a>
+							{% endif %}
+							{% if artist.fb_url %}
+							<a href="{{ artist.fb_url }}" target="_blank">
+								<img class="site-icon" src="{% static 'fb.png' %}">
+							</a>
+							{% endif %}
+						</h5>
+					</div>
+					<div class="col-xs-4">
+						<img class="artist-img" src="{{ artist.artist_page_img.url }}">
+					</div>
+					<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>.</p>
+				</div>
+			</section>
+			{% endwith %}
+		{% endif %}
 	{% endfor %}
 </div>
+
+<script type="text/javascript">
+	if("None" != "{{ name }}") {
+		$("body,html").animate({
+			scrollTop: $("#{{ name|cut:" " }}").offset().top
+		}, 800 );
+	}
+	
+		
+</script>
 
 {% include "navbar/footer.html" %}

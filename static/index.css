@@ -21,7 +21,7 @@
 }
 
 .intro .artists .artist{
-	margin-top: 20vh;
+	margin-top: 19vh;
 	height: 80vh;
 	position: fixed;
 }
@@ -34,7 +34,7 @@
 .intro .artists .artist img:hover {
 	filter: saturate(100%);
 	z-index: 999 !important;
-	transform: scale(1.05);
+	transform: scale(1.01);
 
 }
 .intro .artist-name {

@@ -29,7 +29,7 @@
 	color: var(--white);
 	padding-top: 15vh;
 	min-height: 100vh;
-	text-shadow: 1px 1px rgba(0,0,0,1);
+	text-shadow: 2px 2px rgba(0,0,0,1);
 }
 .product h1 {
 	font-weight: 1000;
@@ -53,6 +53,7 @@
 	font-size: 2em;
 	font-weight: 1000;
 	padding: .5em .5em .5em .5em;
+	text-shadow: none;
 }
 .product span.button a {
 	padding: .5em .5em .5em .5em;
@@ -63,8 +64,8 @@
 	display: inline-block;
 }
 .og_price {
-	border-bottom: solid 2px var(--red);
+	border-bottom: solid 5px var(--red);
 }
 .earnings {
-	border-bottom: solid 2px var(--blue);
+	border-bottom: solid 5px var(--blue);
 }

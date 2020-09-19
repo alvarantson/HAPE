@@ -24,6 +24,9 @@ class Item(models.Model):
 	price = models.FloatField(blank=True) 
 	discount_percentage = models.PositiveIntegerField(default=0)
 
+#TODO suurused
+
+
 	img = models.ImageField()
 	img_2 = models.ImageField(null=True, blank=True)
 	img_3 = models.ImageField(null=True, blank=True)

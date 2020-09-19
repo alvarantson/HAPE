@@ -26,6 +26,13 @@
 					}, function() {
 						$("#{{ release.random_str }}-sidenav-date").css({"opacity":".2"});
 					});
+
+
+					$("#{{ release.random_str }}-sidenav").click( function() {
+						$("body,html").animate({
+							scrollTop: $("#{{ release.random_str }}").offset().top
+						}, 800 );
+					});
 				</script>
 			{% endfor %}
 		</div>
