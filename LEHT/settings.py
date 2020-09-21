@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'artists',
     'releases',
     'shop',
+    'scrape',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

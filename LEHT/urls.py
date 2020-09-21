@@ -28,6 +28,7 @@ urlpatterns = [
     path('artists/', include('artists.urls')),
     path('releases/', include('releases.urls')),
     path('shop/', include('shop.urls')),
+    path('scrape/', include('scrape.urls')),
     path('favicon.ico',
         RedirectView.as_view(
             url=staticfiles_storage.url('favicon.png'),

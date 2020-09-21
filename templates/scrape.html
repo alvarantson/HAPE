@@ -1,0 +1,69 @@
+{% load static %}
+{% include "navbar/navbar.html" %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'scrape.css' %}">
+<br><br><br><br>
+<div class="scrape col-xs-12">
+	<form method="POST">{% csrf_token %}
+		<button name="submit-btn" value="update-views">Update views</button>
+		<button name="submit-btn" value="update-releases">Update releases</button>
+	</form>
+	{% for i in channels %}
+		<div class="col-xs-12">
+			<a data-toggle="collapse" href="#{{i.channel.random_str}}"><h3>{{ i.channel.name }}</h3></a>
+		</div>
+		<div class="col-xs-12 collapse" id="{{i.channel.random_str}}">
+			<hr>
+			{% for j in i.videos %}
+				<div class="col-xs-12">
+					<a data-toggle="collapse" href="#{{j.video.random_str}}">
+						<h4>
+							{{ j.video.name }} 
+							<span class="right" style="float: right;">
+								views: {{ j.stats.0.views }} - 
+								likes: {{ j.stats.0.likes }} - 
+								dislikes: {{ j.stats.0.dislikes }} - 
+								comments: {{ j.stats.0.comments }} - 
+								date: {{ j.stats.0.date }}
+							</span>
+						</h4>
+					</a>
+				</div>
+				<div class="col-xs-12 collapse" id="{{j.video.random_str}}">
+					<hr>
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">date</th>
+								<th scope="col">views</th>
+								<th scope="col">likes</th>
+								<th scope="col">dislikes</th>
+								<th scope="col">comments</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						
+						{% for k in j.stats %}
+							<tr>
+								<th scope="row">{{ k.date }}</th>
+								<td>{{ k.views }}</td>
+								<td>{{ k.likes }}</td>
+								<td>{{ k.dislikes }}</td>
+								<td>{{ k.comments }}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+					<hr>
+				</div>
+			{% endfor %}
+			<hr>
+		</div>
+	{% endfor %}
+</div>
+
+<script type="text/javascript">
+</script>
+
+{% include "navbar/footer.html" %}
