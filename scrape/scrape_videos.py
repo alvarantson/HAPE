@@ -9,7 +9,7 @@ from .models import *
 def video_scrape(channel):
 	browser = RoboBrowser(history=True)
 	browser.open(channel.url.replace("/featured","")+"/videos")
-	time.sleep(.3)
+	time.sleep(.1)
 	for link in re.findall("/watch\?v=[a-zA-Z0-9_-]+", str(browser.parsed)):
 		if len(Video.objects.filter(channel=channel, url="https://www.youtube.com"+link)) == 0:
 			br = RoboBrowser(history=True)
@@ -21,7 +21,7 @@ def video_scrape(channel):
 def stats_scrape(video):
 	browser = RoboBrowser(history=True)
 	browser.open(video.url)
-	time.sleep(.3)
+	time.sleep(.1)
 	views = (re.findall("\"viewCount\":(.+)", str(browser.parsed))[0].split(" vaatamist")[0].split("\"")[-1])
 	likes = (re.findall("(\d+) meeldimist", str(browser.parsed)))[0]
 	dislikes = (re.findall("(\d+) kasutajale ei meeldinud", str(browser.parsed)))[0]
